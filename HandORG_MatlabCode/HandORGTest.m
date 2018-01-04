@@ -1,4 +1,4 @@
-BU=imread('bu.jpg');
+BU=imread('BU2.jpg');
 SHITOU=imread('shitou.jpg');
 JIANDAO=imread('jiandao.jpg');
-result=ORG(BU);
+result=ORG(SHITOU);

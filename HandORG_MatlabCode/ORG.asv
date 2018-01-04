@@ -8,7 +8,7 @@ result=0;
 if r>800
     A=imresize(A,[300, 300]);%改变图像的大小
     
-
+    imshow(A);
 end
 % figure
 % imshow(A)
@@ -17,7 +17,7 @@ end
 se=fspecial('average',[3,3]);%创建平滑均值滤波（3X3）
 A=imfilter(A,se);%对任意类型数组或多维图像用上面定义的滤波算子进行滤波
 
-imshow(A);
+imshow
 imageR=A(:,:,1);
 imageG=A(:,:,2);
 imageB=A(:,:,3);
@@ -34,14 +34,14 @@ BW=im2bw(A);%构造二值图
 BW=zeros(size(BW));%全图置为黑色
 BW(index)=1;%把肤色区域置为白色
 % figure
- imshow(BW)
+% imshow(BW)
 IM= bwareaopen(BW,round(1/40*numel(BW)));%把包含像素点少的白色区域去除
 % figure
-imshow(IM)
+% imshow(IM)
 se = strel('disk',round(numel(IM)/15000));
 IM=imclose(IM,se);%闭操作
 % figure
- imshow(IM)
+% imshow(IM)
 IM= bwareaopen(IM,round(1/10*numel(IM)));%把包含像素点少的白色区域去除
 % figure
 % imshow(IM)
@@ -63,7 +63,7 @@ centerx=r(1);%得到重心
 centery=c(1);
 IM(centerx,centery)=0;
 % figure
- imshow(IM)
+% imshow(IM)
 %求离重心最远的点
 [r c]=find(IM==1);
 BW = edge(IM,'sobel');%找到边缘
